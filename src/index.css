@@ -1,0 +1,124 @@
+
+                    @tailwind base;
+                    @tailwind components;
+                    @tailwind utilities;
+
+                /* Custom Scrollbar */
+                ::-webkit-scrollbar {
+                  width: 8px;
+                  height: 8px;
+                }
+
+                ::-webkit-scrollbar-track {
+                  background: #f1f1f1;
+                  border-radius: 4px;
+                }
+
+                ::-webkit-scrollbar-thumb {
+                  background: #ccc;
+                  border-radius: 4px;
+                }
+
+                ::-webkit-scrollbar-thumb:hover {
+                  background: #30ae75;
+                }
+
+                    @layer base {
+                      :root {
+                        --background: 0 0% 98%; /* Branco para fundo */
+                        --foreground: 0 0% 3.9%; /* Preto para texto */
+
+                        --card: 0 0% 95%; /* Cinza claro para cards */
+                        --card-foreground: 0 0% 3.9%;
+
+                        --popover: 0 0% 95%;
+                        --popover-foreground: 0 0% 3.9%;
+
+                        --primary: 120 100% 50%; /* Verde Neon */
+                        --primary-foreground: 0 0% 98%; /* Branco para texto em botões primários */
+
+                        --secondary: 120 20% 90%; /* Verde claro para secundário */
+                        --secondary-foreground: 0 0% 3.9%;
+
+                        --muted: 153 10% 95%; /* Cinza muito claro para muted */
+                        --muted-foreground: 0 0% 30%; /* Cinza escuro para texto muted */
+
+                        --accent: 153 60% 90%; /* #30ae75 claro para accent */
+                        --accent-foreground: 0 0% 3.9%;
+
+                        --destructive: 0 72.2% 50.6%; /* Vermelho para destrutivo */
+                        --destructive-foreground: 0 0% 98%;
+
+                        --border: 153 20% 90%; /* Borda #30ae75 clara */
+                        --input: 153 10% 95%; /* Input cinza claro */
+                        --ring: 153 48% 60%; /* Ring #30ae75 mais claro */
+
+                        --radius: 0.5rem;
+                      }
+
+                      .dark {
+                        --background: 0 0% 3.9%; /* Preto fundo */
+                        --foreground: 0 0% 98%; /* Branco texto */
+
+                        --card: 0 0% 5.9%; /* Um pouco mais claro que o fundo */
+                        --card-foreground: 0 0% 98%;
+
+                        --popover: 0 0% 5.9%;
+                        --popover-foreground: 0 0% 98%;
+
+                        --primary: 153 48% 43%; /* #30ae75 */
+                        --primary-foreground: 0 0% 3.9%; /* Preto para texto em botões primários */
+
+                        --secondary: 153 20% 15%; /* #30ae75 mais escuro */
+                        --secondary-foreground: 0 0% 98%;
+
+                        --muted: 120 10% 10%; /* Verde muito escuro/cinza para muted */
+                        --muted-foreground: 0 0% 60%; /* Cinza claro para texto muted */
+
+                        --accent: 120 60% 40%; /* Verde mais suave para accent */
+                        --accent-foreground: 0 0% 98%;
+
+                        --destructive: 0 62.8% 30.6%; /* Mantido vermelho para destrutivo (escuro) */
+                        --destructive-foreground: 0 0% 98%;
+
+                        --border: 120 20% 20%; /* Borda verde escura */
+                        --input: 120 10% 12%; /* Input verde escuro */
+                        --ring: 120 100% 60%; /* Ring verde neon mais claro */
+                      }
+                    }
+
+                    @layer base {
+                      * {
+                        @apply border-border;
+                      }
+                      body {
+                        @apply bg-background text-foreground;
+                        font-feature-settings: "rlig" 1, "calt" 1;
+                      }
+                    }
+
+                    /* Custom scrollbar styles */
+                    .custom-scrollbar::-webkit-scrollbar {
+                      width: 8px;
+                      height: 8px;
+                    }
+
+                    .custom-scrollbar::-webkit-scrollbar-track {
+                      @apply bg-secondary;
+                      border-radius: 10px;
+                    }
+
+                    .custom-scrollbar::-webkit-scrollbar-thumb {
+                      @apply bg-primary/70;
+                      border-radius: 10px;
+                    }
+
+                    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+                      @apply bg-primary;
+                    }
+
+                    /* For Firefox */
+                    .custom-scrollbar {
+                      scrollbar-width: thin;
+                      scrollbar-color: hsl(var(--primary)) hsl(var(--secondary));
+                    }
